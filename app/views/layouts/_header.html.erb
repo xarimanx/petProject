@@ -1,0 +1,11 @@
+<header>
+  <nav class="round">
+    <ul>
+      <% if signed_in? %>
+      <li>Loggin as <%= link_to @user.email+" [Sign out]", destroy_user_session_path, :method => :delete %></li>
+      <% else %>
+      <li><%= link_to "Sign in", new_user_session_path %></li>
+      <% end %>
+    </ul>
+  </nav>
+</header>
