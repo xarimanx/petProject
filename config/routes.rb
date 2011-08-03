@@ -1,7 +1,18 @@
 PetProject::Application.routes.draw do
+  get "question/index"
+
+  get "question/show"
+
+  get "question/edit"
+
+  get "question/create"
+
+  get "question/update"
+
+  get "question/destroy"
+
   devise_for :users
 
-  get "pages/home"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -52,7 +63,7 @@ PetProject::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "pages#home"
+  root :to => "pages#index"
 
   # See how all your routes lay out with "rake routes"
 

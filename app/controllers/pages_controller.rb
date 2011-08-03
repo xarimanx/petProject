@@ -1,8 +1,5 @@
 class PagesController < ApplicationController
-  
-  def home
-    @title = "Home"
-    @user = current_user
+  def index
+    @questions = Question.page params[:page]
   end
-
 end
