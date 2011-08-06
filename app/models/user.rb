@@ -5,7 +5,13 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 
-  has_many :questions, :dependent => :destroy
+  
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :name,  :email, :password, :password_confirmation, :remember_me
+  has_many :questions, :dependent => :destroy
+  has_many :answers, :dependent => :destroy
+  
+  def feed
+    Question.where("user_id = #{curent_user}")
+  end
 end
