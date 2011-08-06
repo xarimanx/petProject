@@ -1,0 +1,21 @@
+<table class="profile" summary="Profile information">
+  <tr>
+    <td class="main">
+      <h1>
+        <%= gravatar_for current_user %>
+        <%= current_user.email %>
+      </h1>
+      <% unless current_user.questions.empty? %>
+        <table class="questions" summary="User questions">
+          <%= render :partial => 'questions/question', :collection => @questions %>         
+        </table>        
+        <%= paginate @questions %>
+      <% end %>
+    </td>
+    <td class="sidebar round">
+      <strong>Name</strong> <%= current_user.email %><br />
+      <strong>URL</strong> <%= link_to "Yours link", current_user %><br />
+      <strong>Questions</strong> <%= current_user.questions.count %>
+    </td>
+  </tr>
+</table>
