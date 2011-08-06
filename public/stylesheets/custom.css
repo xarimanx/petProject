@@ -106,31 +106,31 @@ ul.users {
 .users li {
   list-style: none;
 }
-h1.micropost {
+h1.question {
   margin-bottom: 0.3em;
 }
 
-table.microposts {
+table.questions {
   margin-top: 1em;
 }
 
-table.microposts tr {
+table.questions tr {
   height: 70px;
 }
 
-table.microposts tr td.gravatar {
+table.questions tr td.gravatar {
   border-top: 1px solid #ccc;
   vertical-align: top;
   width: 50px;
 }
 
-table.microposts tr td.micropost {
+table.questions tr td.question {
   border-top: 1px solid #ccc;
   vertical-align: top;
   padding-top: 10px;
 }
 
-table.microposts tr td.micropost span.timestamp {
+table.questions tr td.question span.timestamp {
   display: block;
   font-size: 85%;
   color: #666;
@@ -148,15 +148,15 @@ div.user_info span.user_name {
   position: absolute;
 }
 
-div.user_info span.microposts {
+div.user_info span.questions {
   font-size: 80%;
 }
 
-form.new_micropost {
+form.new_question {
   margin-bottom: 2em;
 }
 
-form.new_micropost textarea {
+form.new_question textarea {
   height: 4em;
   margin-bottom: 0;
 }

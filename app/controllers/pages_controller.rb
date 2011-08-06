@@ -1,5 +1,8 @@
 class PagesController < ApplicationController
   def index
-    @questions = Question.page params[:page]
+    if signed_in?
+      @question = Question.new
+      @feed_items = Question.page params[:page]
+    end
   end
 end
