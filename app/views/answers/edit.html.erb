@@ -1,2 +1,23 @@
-<h1>Answer#edit</h1>
-<p>Find me in app/views/answer/edit.html.erb</p>
+  <table class="front" summary="For signed-in users">
+    <tr>
+      <td class="main">
+        <h1 class="questions">Your's answer? </h1> <%= current_user.email %></br>        
+		<%= form_for @answer do |f| %>
+		
+		<%= render 'shared/error_messages', :object => f.object %>
+  		<%= hidden_field( :question, :id ) %>
+		<div class="field">
+    		<%= f.text_area :content %>
+  		</div>
+  		<div class="actions">
+  			<%= f.submit "Submit" %>
+  		</div>
+		<% end %>
+	  </td>
+      <td class="sidebar round">
+        <%= render 'shared/user_info' %>
+      </td>
+    </tr>
+  </table>
+
+

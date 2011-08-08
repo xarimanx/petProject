@@ -23,18 +23,26 @@ class AnswersController < ApplicationController
     end
   end
 
-  def edit
+  def edit    
+    @answer = Answer.find(params[:id])
   end
 
   def show    
   end
 
   def update
+    @answer = Answer.find(params[:id])
+    if @answer.update_attribute(:content, params[:answer][:content])
+      flash[:success] = "Answer update!"
+      redirect_to root_path
+    else
+      render 'pages/index'
+    end
   end
 
   def destroy
     @answer.destroy
-    redirect_back_or root_path
+    redirect_to root_path
   end
   
   private

@@ -24,7 +24,7 @@
 	  	</td>
 	  <% else %>
 	    <td>
-	    	<%= link_to "Edit", :controller => "answers", :action => "edit", :question_id => feed_item.id %>
+	    	<%= link_to "Edit", :controller => "answers", :action => "edit", :id => feed_item.answers.where("user_id = #{current_user.id}").first.id %>
 	  	</td>
 	  <% end %>
 	  <% if current_user?(feed_item.user) %>
@@ -37,7 +37,7 @@
   <% else %>
 	<% if current_user?(feed_item.user) %>
 	  <td>
-	   	<%= link_to "Edit", :controller => "answers", :action => "edit"%>
+	   	<%= link_to "Edit", :controller => "answers", :action => "edit", :id => feed_item.id %>
 	  </td>
 	  <td>
 	    <%= link_to "Delete", feed_item, :method => :delete,

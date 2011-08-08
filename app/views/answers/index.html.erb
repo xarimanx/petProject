@@ -2,7 +2,7 @@
     <tr>
       <td class="main">
         <% unless @feed_items.empty? %>
-  		<table class="questions" summary="User questions">
+  		<table class="answers" summary="User answers">
     	<%= render :partial => 'shared/feed_item', :collection => @feed_items %>
   		</table>
   		<%= paginate @feed_items %>

@@ -12,17 +12,6 @@ module UsersHelper
   
   def user_answered?(question)
     question.answers.where("user_id = #{current_user.id}").empty?
-  end
-  
-  def redirect_back_or(default)
-    redirect_to(session[:return_to] || default)
-    clear_return_to
-  end
-  
-  private
-
-  def clear_return_to
-    session[:return_to] = nil
-  end
+  end  
   
 end

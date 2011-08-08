@@ -15,7 +15,7 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
-    redirect_back_or root_path
+    redirect_to root_path
   end
   
   private
